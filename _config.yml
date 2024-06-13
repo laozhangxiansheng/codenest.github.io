@@ -116,7 +116,7 @@ dark_mode:
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/laozhangxiansheng/codenest.github.io
+  repo: https://github.com/laozhangxiansheng/laozhangxiansheng.github.io
   branch: master
 # 二级导航
 navbar:
