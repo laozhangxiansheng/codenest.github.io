@@ -27,6 +27,12 @@ navbar:
         icon: "iconfont icon-books",
       }
     - {
+        key: "journey",
+        link: "/journey/",
+        name: "吃喝玩乐",
+        icon: "iconfont icon-food",
+      }
+    - {
         key: "about",
         link: "/about/",
         icon: "iconfont icon-user-fill",
@@ -46,7 +52,8 @@ permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
   trailing_html: true # Set to false to remove trailing '.html' from permalinks
-
+archives:
+  banner_img: https://cdn.houdemingxin.com/image/default/27210CC0731046F0978671A017530FC1-6-2.png
 # 首页配置
 index:
   banner_img: https://cdn.houdemingxin.com/image/default/27210CC0731046F0978671A017530FC1-6-2.png
