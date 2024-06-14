@@ -12,8 +12,28 @@ language: zh-CN
 timezone: ""
 navbar:
   blog_title: 巷子里的老张先生
-# 背景图
-# URL
+  menu:
+    - { key: "home", link: "/", icon: "iconfont icon-home-fill" }
+    - { key: "tag", link: "/tags/", icon: "iconfont icon-tags-fill" }
+    - {
+        key: "archives",
+        link: "/archives/",
+        name: "武林秘籍",
+        icon: "iconfont icon-books",
+      }
+    - {
+        key: "about",
+        link: "/about/",
+        icon: "iconfont icon-user-fill",
+        name: "联系我",
+      }
+# 统计
+footer:
+  statistics:
+    enable: true
+    source: "busuanzi" # 可选 leancloud | busuanzi  根据自己需求选择
+    pv_format: "总访问量 {} 次" # 显示的文本，{}是数字的占位符（必须包含)，下同
+    uv_format: "总访客数 {} 人"
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: http://example.com
 permalink: :year/:month/:day/:title/
@@ -21,7 +41,48 @@ permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
   trailing_html: true # Set to false to remove trailing '.html' from permalinks
+# 首页配置
+index:
+  banner_img: https://cdn.houdemingxin.com/image/default/27210CC0731046F0978671A017530FC1-6-2.png
+  # 打字机
+  slogan:
+    enable: true
+    text: 路漫漫其修远兮，吾将上下而求索
+    api:
+      enable: true
+      url: "https://v1.hitokoto.cn/"
+      method: "GET"
+      headers: {}
+      keys: ["hitokoto"]
 
+  # 文章摘要
+  auto_excerpt:
+    enable: false
+  post_meta:
+    date: true
+    categories: true
+    comments: true
+    category: true
+    tag: true
+# 文章页配置
+post:
+  comments:
+    enable: true
+    type: disqus
+  disqus:
+  shortname: fluid
+code:
+  copy_btn: true
+  highlight:
+    enable: true
+    line_number: true
+    lib: "highlightjs"
+    highlightjs:
+      style: "Github Gist"
+      bg_color: false
+    prismjs:
+      style: "default"
+      preprocess: true
 # Directory
 source_dir: source
 public_dir: public
@@ -103,16 +164,6 @@ theme: fluid
 dark_mode:
   enable: true
   default: auto
-# 打字机
-index:
-  slogan:
-    enable: true
-    api:
-      enable: true
-      url: "https://v1.hitokoto.cn/"
-      method: "GET"
-      headers: {}
-      keys: ["hitokoto"]
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
