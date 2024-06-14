@@ -1,7 +1,8 @@
 ---
 title: 关于咱
 date: 2024-06-13 16:22:41
-banner_img: https://cdn.houdemingxin.com/image/default/B380716569044A5DA885EAFA36EE4FAF-6-2.png
+comment: "valine"
+banner_img: https://cdn.houdemingxin.com/image/default/0C97FB10050E44B5A46190DFA785E1B0-6-2.png
 ---
 
 <style>
@@ -24,10 +25,10 @@ banner_img: https://cdn.houdemingxin.com/image/default/B380716569044A5DA885EAFA3
 
 联系方式
 
-<span class="iconfont icon-wechat-fill wx" style="color:#07c160;" ></span> `Lao_zhang_Mr`
+<span class="iconfont icon-wechat-fill wx" style="color:#07c160; font-size: 20px; margin-right: 10px; cursor: pointer;"></span> `Lao_zhang_Mr`
 <img src="https://cdn.houdemingxin.com/image/default/B380716569044A5DA885EAFA36EE4FAF-6-2.png"  class="wxbg">
-<span class="iconfont icon-qq-fill" style="color:#1296db;"></span> `2117872443`
+<span class="iconfont icon-qq-fill" style="color:#1296db;font-size: 20px; margin-right: 10px; cursor: pointer;" ></span> `2117872443`
 
-<span class="iconfont icon-mobile" style="color:#00bfff;"></span> `17888722599`
+<span class="iconfont icon-mobile" style="color:#00bfff;font-size: 20px; margin-right: 10px; cursor: pointer;"></span> `17888722599`
 
-<span class="iconfont icon-mail" style="color:#e6162d;"></span> `zjl2117872443@163.com`
+<span class="iconfont icon-mail" style="color:#e6162d;font-size: 20px; margin-right: 10px; cursor: pointer;"></span> `zjl2117872443@163.com`
