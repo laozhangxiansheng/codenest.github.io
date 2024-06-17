@@ -2,7 +2,7 @@
 title: 关于咱
 date: 2024-06-13 16:22:41
 comment: "valine"
-banner_img: https://cdn.houdemingxin.com/image/default/0C97FB10050E44B5A46190DFA785E1B0-6-2.png
+banner_img: https://cdn.houdemingxin.com/image/default/01F7089BBE484CAA8FA79A18DBB096E0-6-2.png
 ---
 
 <style>
