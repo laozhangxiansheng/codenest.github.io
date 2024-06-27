@@ -30,7 +30,7 @@ navbar:
         key: "journey",
         link: "/journey/",
         name: "吃喝玩乐",
-        icon: "iconfont icon-food",
+        icon: "iconfont icon-plays-fill",
       }
     - {
         key: "about",
@@ -52,11 +52,6 @@ permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
   trailing_html: true # Set to false to remove trailing '.html' from permalinks
-# 标签页顶部图片
-tag_img: /images/tag_bg.jpg
-
-# 归档页顶部图片
-archive_banner_img: https://cdn.houdemingxin.com/image/default/27210CC0731046F0978671A017530FC1-6-2.png
 
 # 首页配置
 index:
@@ -192,3 +187,18 @@ deploy:
   type: git
   repo: https://github.com/laozhangxiansheng/laozhangxiansheng.github.io
   branch: master
+# 标签页
+tag:
+  banner_img: https://cdn.houdemingxin.com/image/default/8FD662F5172648958B023FC0D9E657AF-6-2.png
+  categories:
+    - 浏览器
+    - 编程语言
+  tagcloud:
+    min_font: 15
+    max_font: 30
+    unit: px # 字号单位
+    start_color: "#BBBBEE"
+    end_color: "#337ab7"
+# 归档页
+archive:
+  banner_img: https://cdn.houdemingxin.com/image/default/07909BF5A26F44CD9D0A1600BD5DE827-6-2.png

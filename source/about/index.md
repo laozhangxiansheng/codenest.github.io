@@ -1,5 +1,5 @@
 ---
-title: 关于咱
+title: 联系我
 date: 2024-06-13 16:22:41
 comment: "valine"
 banner_img: https://cdn.houdemingxin.com/image/default/01F7089BBE484CAA8FA79A18DBB096E0-6-2.png
@@ -72,5 +72,4 @@ banner_img: https://cdn.houdemingxin.com/image/default/01F7089BBE484CAA8FA79A18D
         <span class="iconfont icon-qq-fill qq" style="color:#1296db;font-size: 25px; margin-right: 10px; cursor: pointer;" ></span>
         <img src="https://cdn.houdemingxin.com/image/default/9DC30992B1974D508D0E96683CDDD926-6-2.png"  class="qq_qrcode">
     </div>
-
 </div>
