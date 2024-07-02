@@ -12,6 +12,12 @@
     
     
     
+    <tags>
+      
+      <tag>HTML</tag>
+      
+    </tags>
+    
   </entry>
   
   
@@ -24,6 +30,12 @@
     <content type="html"><![CDATA[<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><ul><li>基本选择器<ul><li>标签选择器</li><li>类选择器</li><li>id 选择器</li><li>通配符选择器</li><li>属性选择器</li><li>伪类选择器</li><li>伪元素选择器</li></ul></li><li>组合选择器<ul><li>后代选择器</li><li>子元素选择器</li><li>相邻兄弟选择器</li><li>通用兄弟选择器</li></ul></li><li>伪类选择器<ul><li>动态伪类选择器</li></ul></li></ul><h3 id="重绘重排"><a href="#重绘重排" class="headerlink" title="重绘重排"></a>重绘重排</h3><ul><li><p>重绘</p><ul><li>元素的外观发生改变时会触发重绘，例如：修改元素的颜色或者背景色时会导致页面重新绘制</li></ul></li><li><p>重排</p><ul><li>指页面重新排列，dom 的变化影响了元素的布局，例如：页面初始化时，对 dom 节点进行增删改时，浏览器窗口的 resize 发生改变时都会触发重排</li></ul></li><li><p>重排必然会导致重绘，重绘不一定导致重排</p></li><li><p>display:none; (隐藏元素不占位) 会导致重排和重绘</p></li><li><p>visibility:hidden; (隐藏元素占位) 只会导致重绘，不会导致重排</p></li></ul><h3 id="响应式布局"><a href="#响应式布局" class="headerlink" title="响应式布局"></a>响应式布局</h3><ul><li>媒体查询<ul><li>媒体查询是 CSS3 引入的，通过媒体查询可以针对不同的媒体类型定义不同的样式</li><li>媒体查询可以针对不同的屏幕尺寸、不同的设备类型、不同的设备方向进行响应式布局</li><li>媒体查询的语法格式如下：</li></ul></li></ul><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-keyword">@media</span> mediatype <span class="hljs-keyword">and</span>|<span class="hljs-keyword">not</span>|<span class="hljs-keyword">only</span> (media feature) &#123;<br>  CSS代码;<br>&#125;<br></code></pre></td></tr></table></figure><ul><li>媒体查询的 mediatype 属性<ul><li>all: 用于所有设备</li><li>print: 用于打印机和打印预览</li><li>screen: 用于电脑屏幕、平板电脑、智能手机等</li><li>speech: 用于屏幕阅读器等发声设备</li></ul></li><li>媒体查询的 media feature 属性<ul><li>width: 定义视口的宽度</li><li>height: 定义视口的高度</li><li>max-width: 定义视口的最大宽度</li><li>min-width: 定义视口的最小宽度</li><li>max-height: 定义视口的最大高度</li><li>min-height: 定义视口的最小高度</li><li>orientation: 定义视口的横纵比例</li><li>aspect-ratio: 定义视口的宽高比例</li><li>color: 定义视口的颜色深度</li><li>color-index: 定义视口的颜色索引值</li><li>resolution: 定义视口的分辨率</li><li>scan: 定义视口的扫描方式</li><li>grid: 定义视口的栅格是否为网格</li><li>pointer: 定义视口的指针类型</li><li>hover: 定义视口的鼠标悬停状态</li></ul></li></ul>]]></content>
     
     
+    
+    <tags>
+      
+      <tag>CSS</tag>
+      
+    </tags>
     
   </entry>
   
