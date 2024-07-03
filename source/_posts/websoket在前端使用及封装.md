@@ -1,7 +1,8 @@
 ---
 title: Websoket的使用及封装
 tags: Websoket
-banner_img: https://cdn.houdemingxin.com/image/default/B380716569044A5DA885EAFA36EE4FAF-6-2.png
+index_img: https://cdn.houdemingxin.com/image/default/CF4AFA8A497C42D382680A794A40BE26-6-2.png
+banner_img: https://cdn.houdemingxin.com/image/default/CF4AFA8A497C42D382680A794A40BE26-6-2.png
 date: 2024-07-02 16:22:39
 ---
 
