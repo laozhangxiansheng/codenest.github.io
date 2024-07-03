@@ -30,7 +30,7 @@ navbar:
         key: "journey",
         link: "/journey/",
         name: "吃喝玩乐",
-        icon: "iconfont icon-plays-fill",
+        icon: "iconfont beer_and_skittles",
       }
     - {
         key: "about",
