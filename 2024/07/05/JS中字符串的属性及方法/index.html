@@ -1,0 +1,731 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="巷子里的老张先生">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="JS 中字符串的属性及方法属性1. length字符串的长度，即字符串中字符的个数。 12let str &#x3D; &quot;hello world&quot;;console.log(str.length); &#x2F;&#x2F; 11  方法2. charAt(index)返回指定位置的字符，index 为字符串中的索引，从 0 开始。 123let str &#x3D; &quot;hello world&quot;;c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS中字符串的属性及方法">
+<meta property="og:url" content="http://example.com/2024/07/05/JS%E4%B8%AD%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%B1%9E%E6%80%A7%E5%8F%8A%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:site_name" content="Code monkey Nest">
+<meta property="og:description" content="JS 中字符串的属性及方法属性1. length字符串的长度，即字符串中字符的个数。 12let str &#x3D; &quot;hello world&quot;;console.log(str.length); &#x2F;&#x2F; 11  方法2. charAt(index)返回指定位置的字符，index 为字符串中的索引，从 0 开始。 123let str &#x3D; &quot;hello world&quot;;c">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.houdemingxin.com/image/default/CF4AFA8A497C42D382680A794A40BE26-6-2.png">
+<meta property="article:published_time" content="2024-07-05T15:53:39.000Z">
+<meta property="article:modified_time" content="2024-07-05T08:33:01.871Z">
+<meta property="article:author" content="巷子里的老张先生">
+<meta property="article:tag" content="JS">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.houdemingxin.com/image/default/CF4AFA8A497C42D382680A794A40BE26-6-2.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>JS中字符串的属性及方法 - Code monkey Nest</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>巷子里的老张先生</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-books"></i>
+                <span>武林秘籍</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/journey/" target="_self">
+                <i class="iconfont beer_and_skittles"></i>
+                <span>吃喝玩乐</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>联系我</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://cdn.houdemingxin.com/image/default/CF4AFA8A497C42D382680A794A40BE26-6-2.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="JS中字符串的属性及方法"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-07-05 15:53" pubdate>
+          2024年7月5日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          9 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">JS中字符串的属性及方法</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="JS-中字符串的属性及方法"><a href="#JS-中字符串的属性及方法" class="headerlink" title="JS 中字符串的属性及方法"></a>JS 中字符串的属性及方法</h1><h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><h3 id="1-length"><a href="#1-length" class="headerlink" title="1. length"></a>1. length</h3><p>字符串的长度，即字符串中字符的个数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;hello world&quot;</span>;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-property">length</span>); <span class="hljs-comment">// 11</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="2-charAt-index"><a href="#2-charAt-index" class="headerlink" title="2. charAt(index)"></a>2. charAt(index)</h3><p>返回指定位置的字符，index 为字符串中的索引，从 0 开始。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;hello world&quot;</span>;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">charAt</span>(<span class="hljs-number">0</span>)); <span class="hljs-comment">// h</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">charAt</span>(<span class="hljs-number">1</span>)); <span class="hljs-comment">// e</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="3-charCodeAt-index"><a href="#3-charCodeAt-index" class="headerlink" title="3. charCodeAt(index)"></a>3. charCodeAt(index)</h3><p>返回指定位置的字符的 Unicode 编码，index 为字符串中的索引，从 0 开始。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;hello world&quot;</span>;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">charCodeAt</span>(<span class="hljs-number">0</span>)); <span class="hljs-comment">// 104</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">charCodeAt</span>(<span class="hljs-number">1</span>)); <span class="hljs-comment">// 101</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="4-indexOf-searchValue-fromIndex"><a href="#4-indexOf-searchValue-fromIndex" class="headerlink" title="4. indexOf(searchValue, fromIndex)"></a>4. indexOf(searchValue, fromIndex)</h3><p>返回指定子字符串在原字符串中首次出现的位置，返回索引。未找到时返回 -1。可选参数 fromIndex 指定起始搜索位置。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;hello world&quot;</span>;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">indexOf</span>(<span class="hljs-string">&quot;o&quot;</span>)); <span class="hljs-comment">// 4</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">indexOf</span>(<span class="hljs-string">&quot;o&quot;</span>, <span class="hljs-number">5</span>)); <span class="hljs-comment">// 7</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="5-lastIndexOf-searchValue-fromIndex"><a href="#5-lastIndexOf-searchValue-fromIndex" class="headerlink" title="5. lastIndexOf(searchValue, fromIndex)"></a>5. lastIndexOf(searchValue, fromIndex)</h3><p>返回指定字符在字符串中最后一次出现的位置，fromIndex 为开始查找的位置，默认为字符串的长度。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;hello world&quot;</span>;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">lastIndexOf</span>(<span class="hljs-string">&quot;o&quot;</span>)); <span class="hljs-comment">// 7</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">lastIndexOf</span>(<span class="hljs-string">&quot;o&quot;</span>, <span class="hljs-number">5</span>)); <span class="hljs-comment">// 4</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="6-slice-start-end"><a href="#6-slice-start-end" class="headerlink" title="6. slice(start, end)"></a>6. slice(start, end)</h3><p>返回从 start 到 end（不包括 end）之间的字符串，start 和 end 为字符串中的索引，从 0 开始。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;hello world&quot;</span>;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">slice</span>(<span class="hljs-number">0</span>, <span class="hljs-number">5</span>)); <span class="hljs-comment">// hello</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">slice</span>(<span class="hljs-number">6</span>, <span class="hljs-number">11</span>)); <span class="hljs-comment">// world</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="7-substring-start-end"><a href="#7-substring-start-end" class="headerlink" title="7. substring(start, end)"></a>7. substring(start, end)</h3><p>返回从 start 到 end（不包括 end）之间的字符串，start 和 end 为字符串中的索引，从 0 开始。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;hello world&quot;</span>;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">substring</span>(<span class="hljs-number">0</span>, <span class="hljs-number">5</span>)); <span class="hljs-comment">// hello</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">substring</span>(<span class="hljs-number">6</span>, <span class="hljs-number">11</span>)); <span class="hljs-comment">// world</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="8-substr-start-length"><a href="#8-substr-start-length" class="headerlink" title="8. substr(start, length)"></a>8. substr(start, length)</h3><p>返回从 start 开始的 length 个字符，start 为字符串中的索引，从 0 开始。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;hello world&quot;</span>;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">substr</span>(<span class="hljs-number">0</span>, <span class="hljs-number">5</span>)); <span class="hljs-comment">// hello</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">substr</span>(<span class="hljs-number">6</span>, <span class="hljs-number">5</span>)); <span class="hljs-comment">// world</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="9-split-separator-limit"><a href="#9-split-separator-limit" class="headerlink" title="9. split(separator, limit)"></a>9. split(separator, limit)</h3><p>将字符串分割成数组，separator 为分割符，limit 为返回数组的最大长度。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;hello world&quot;</span>;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">split</span>(<span class="hljs-string">&quot; &quot;</span>)); <span class="hljs-comment">// [&quot;hello&quot;, &quot;world&quot;]</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">split</span>(<span class="hljs-string">&quot; &quot;</span>, <span class="hljs-number">1</span>)); <span class="hljs-comment">// [&quot;hello&quot;]</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="10-toLowerCase"><a href="#10-toLowerCase" class="headerlink" title="10. toLowerCase()"></a>10. toLowerCase()</h3><p>将字符串转换为小写。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;Hello World&quot;</span>;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">toLowerCase</span>()); <span class="hljs-comment">// hello world</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="11-toUpperCase"><a href="#11-toUpperCase" class="headerlink" title="11. toUpperCase()"></a>11. toUpperCase()</h3><p>将字符串转换为大写。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;Hello World&quot;</span>;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">toUpperCase</span>()); <span class="hljs-comment">// HELLO WORLD</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="12-trim"><a href="#12-trim" class="headerlink" title="12. trim()"></a>12. trim()</h3><p>去除字符串两端的空格。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;  hello world  &quot;</span>;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">trim</span>()); <span class="hljs-comment">// hello world</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="13-replace-searchValue-replaceValue"><a href="#13-replace-searchValue-replaceValue" class="headerlink" title="13. replace(searchValue, replaceValue)"></a>13. replace(searchValue, replaceValue)</h3><p>将字符串中的 searchValue 替换为 replaceValue。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;hello world&quot;</span>;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">replace</span>(<span class="hljs-string">&quot;world&quot;</span>, <span class="hljs-string">&quot;JavaScript&quot;</span>)); <span class="hljs-comment">// hello JavaScript</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/o/g</span>, <span class="hljs-string">&quot;a&quot;</span>)); <span class="hljs-comment">// hella warld</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="14-match-regexp"><a href="#14-match-regexp" class="headerlink" title="14. match(regexp)"></a>14. match(regexp)</h3><p>返回一个数组，包含字符串中与正则表达式匹配的子串。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;hello world&quot;</span>;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">match</span>(<span class="hljs-regexp">/o/g</span>)); <span class="hljs-comment">// [&quot;o&quot;, &quot;o&quot;]</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="15-search-regexp"><a href="#15-search-regexp" class="headerlink" title="15. search(regexp)"></a>15. search(regexp)</h3><p>返回字符串中第一个与正则表达式匹配的子串的索引。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;hello world&quot;</span>;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">search</span>(<span class="hljs-regexp">/o/</span>)); <span class="hljs-comment">// 4</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="16-trimLeft"><a href="#16-trimLeft" class="headerlink" title="16. trimLeft()"></a>16. trimLeft()</h3><p>去除字符串左端的空白字符。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;  hello world  &quot;</span>;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">trimLeft</span>()); <span class="hljs-comment">// hello world</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="17-trimRight"><a href="#17-trimRight" class="headerlink" title="17. trimRight()"></a>17. trimRight()</h3><p>去除字符串右端的空白字符。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;  hello world  &quot;</span>;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">trimRight</span>()); <span class="hljs-comment">//   hello world</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="18-includes-searchValue-fromIndex"><a href="#18-includes-searchValue-fromIndex" class="headerlink" title="18. includes(searchValue, fromIndex)"></a>18. includes(searchValue, fromIndex)</h3><p>判断字符串是否包含 searchValue，fromIndex 为开始搜索的位置。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;hello world&quot;</span>;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">includes</span>(<span class="hljs-string">&quot;o&quot;</span>)); <span class="hljs-comment">// true</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">includes</span>(<span class="hljs-string">&quot;o&quot;</span>, <span class="hljs-number">5</span>)); <span class="hljs-comment">// true</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">includes</span>(<span class="hljs-string">&quot;o&quot;</span>, <span class="hljs-number">8</span>)); <span class="hljs-comment">// false</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="19-startsWith-searchValue-fromIndex"><a href="#19-startsWith-searchValue-fromIndex" class="headerlink" title="19. startsWith(searchValue, fromIndex)"></a>19. startsWith(searchValue, fromIndex)</h3><p>判断字符串是否以 searchValue 开头，fromIndex 为开始搜索的位置。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;hello world&quot;</span>;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">startsWith</span>(<span class="hljs-string">&quot;h&quot;</span>)); <span class="hljs-comment">// true</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">startsWith</span>(<span class="hljs-string">&quot;h&quot;</span>, <span class="hljs-number">1</span>)); <span class="hljs-comment">// false</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="20-endsWith-searchValue-fromIndex"><a href="#20-endsWith-searchValue-fromIndex" class="headerlink" title="20. endsWith(searchValue, fromIndex)"></a>20. endsWith(searchValue, fromIndex)</h3><p>判断字符串是否以 searchValue 结尾，fromIndex 为开始搜索的位置。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;hello world&quot;</span>;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">endsWith</span>(<span class="hljs-string">&quot;d&quot;</span>)); <span class="hljs-comment">// true</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">endsWith</span>(<span class="hljs-string">&quot;d&quot;</span>, <span class="hljs-number">5</span>)); <span class="hljs-comment">// false</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="21-repeat-count"><a href="#21-repeat-count" class="headerlink" title="21. repeat(count)"></a>21. repeat(count)</h3><p>返回一个新字符串，该字符串包含 count 个 str 的副本。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;hello&quot;</span>;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">repeat</span>(<span class="hljs-number">3</span>)); <span class="hljs-comment">// hellohellohello</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="22-concat-‘hole’-‘world’"><a href="#22-concat-‘hole’-‘world’" class="headerlink" title="22. concat(‘hole’, ‘world’)"></a>22. concat(‘hole’, ‘world’)</h3><p>将一个或多个字符串与原字符串连接合并，形成一个新的字符串并返回。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;hello&quot;</span>;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">concat</span>(<span class="hljs-string">&quot;world&quot;</span>)); <span class="hljs-comment">// helloworld</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">concat</span>(<span class="hljs-string">&quot;world&quot;</span>, <span class="hljs-string">&quot;!&quot;</span>, <span class="hljs-string">&quot;!!!&quot;</span>)); <span class="hljs-comment">// helloworld!!!</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="23-at-index"><a href="#23-at-index" class="headerlink" title="23. at(index)"></a>23. at(index)</h3><p>返回指定位置的字符，支持负索引。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;hello world&quot;</span>;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">at</span>(<span class="hljs-number">0</span>)); <span class="hljs-comment">// h</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">at</span>(-<span class="hljs-number">1</span>)); <span class="hljs-comment">// d</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="24-padStart-targetLength-padString"><a href="#24-padStart-targetLength-padString" class="headerlink" title="24. padStart(targetLength, padString)"></a>24. padStart(targetLength, padString)</h3><p>用 padString 填充字符串，使字符串达到 targetLength 的长度，从字符串的头部开始填充。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;hello&quot;</span>;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">padStart</span>(<span class="hljs-number">10</span>, <span class="hljs-string">&quot; &quot;</span>)); <span class="hljs-comment">//     hello</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">padStart</span>(<span class="hljs-number">10</span>, <span class="hljs-string">&quot;0&quot;</span>)); <span class="hljs-comment">// 00000hello</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="25-padEnd-targetLength-padString"><a href="#25-padEnd-targetLength-padString" class="headerlink" title="25. padEnd(targetLength, padString)"></a>25. padEnd(targetLength, padString)</h3><p>用 padString 填充字符串，使字符串达到 targetLength 的长度，从字符串的尾部开始填充。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;hello&quot;</span>;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">padEnd</span>(<span class="hljs-number">10</span>, <span class="hljs-string">&quot; &quot;</span>)); <span class="hljs-comment">// hello</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str.<span class="hljs-title function_">padEnd</span>(<span class="hljs-number">10</span>, <span class="hljs-string">&quot;0&quot;</span>)); <span class="hljs-comment">// hello00000</span><br></code></pre></td></tr></table></figure>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/JS/" class="print-no-link">#JS</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>JS中字符串的属性及方法</div>
+      <div>http://example.com/2024/07/05/JS中字符串的属性及方法/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>巷子里的老张先生</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年7月5日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/07/02/websoket%E5%9C%A8%E5%89%8D%E7%AB%AF%E4%BD%BF%E7%94%A8%E5%8F%8A%E5%B0%81%E8%A3%85/" title="Websoket的使用及封装">
+                        <span class="hidden-mobile">Websoket的使用及封装</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+</html>
