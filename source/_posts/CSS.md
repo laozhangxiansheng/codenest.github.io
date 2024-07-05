@@ -1,6 +1,7 @@
 ---
 title: CSS
-banner_img: https://cdn.houdemingxin.com/image/default/B380716569044A5DA885EAFA36EE4FAF-6-2.png
+index_img: https://cdn.houdemingxin.com/image/default/0EA3AB5A197B45A0AB007CEDF486845D-6-2.png
+banner_img: https://cdn.houdemingxin.com/image/default/0EA3AB5A197B45A0AB007CEDF486845D-6-2.png
 date: 2024-06-14 16:22:40
 tags: CSS
 ---
