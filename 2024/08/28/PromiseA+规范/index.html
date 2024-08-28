@@ -19,23 +19,26 @@
   <meta name="author" content="巷子里的老张先生">
   <meta name="keywords" content="">
   
-    <meta name="description" content="TS类型 布尔类型(boolean) 数字类型(number) 字符串类型(string) 数组类型(array) 元组类型(tuple) 枚举类型(enum) 任意类型(any) 空值类型(void) 对象类型(object) 联合类型(union) 类型断言(as) 类型推断(infer) 类型别名(type) 类型兼容性(compatible) 类型保护(protect) 类型声明(decl">
+    <meta name="description" content="PromiseA+规范1. 术语 Promise 是一个拥有 then 方法的对象或函数，其行为符合本规范。 thenable 是定义了 then 方法的对象或函数。 value 是任何合法的 JavaScript 值（包括 undefined, thenable, 或 promise）。 exception 是一个使用 throw 语句抛出的值。 reason 是一个表明 promise 为什么">
 <meta property="og:type" content="article">
-<meta property="og:title" content="TS">
-<meta property="og:url" content="http://example.com/2024/06/10/TS/index.html">
+<meta property="og:title" content="PromiseA+规范">
+<meta property="og:url" content="http://example.com/2024/08/28/PromiseA+%E8%A7%84%E8%8C%83/index.html">
 <meta property="og:site_name" content="Code monkey Nest">
-<meta property="og:description" content="TS类型 布尔类型(boolean) 数字类型(number) 字符串类型(string) 数组类型(array) 元组类型(tuple) 枚举类型(enum) 任意类型(any) 空值类型(void) 对象类型(object) 联合类型(union) 类型断言(as) 类型推断(infer) 类型别名(type) 类型兼容性(compatible) 类型保护(protect) 类型声明(decl">
+<meta property="og:description" content="PromiseA+规范1. 术语 Promise 是一个拥有 then 方法的对象或函数，其行为符合本规范。 thenable 是定义了 then 方法的对象或函数。 value 是任何合法的 JavaScript 值（包括 undefined, thenable, 或 promise）。 exception 是一个使用 throw 语句抛出的值。 reason 是一个表明 promise 为什么">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-06-10T16:22:38.000Z">
+<meta property="og:image" content="https://cdn.houdemingxin.com/image/default/F07EA3DBA53744D4A2B16565EAF2E2B5-6-2.png">
+<meta property="article:published_time" content="2024-08-28T15:23:01.000Z">
 <meta property="article:modified_time" content="2024-08-28T09:38:26.495Z">
 <meta property="article:author" content="巷子里的老张先生">
+<meta property="article:tag" content="Promise">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.houdemingxin.com/image/default/F07EA3DBA53744D4A2B16565EAF2E2B5-6-2.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>TS - Code monkey Nest</title>
+  <title>PromiseA+规范 - Code monkey Nest</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -195,13 +198,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://cdn.houdemingxin.com/image/default/B380716569044A5DA885EAFA36EE4FAF-6-2.png') no-repeat center center; background-size: cover;">
+     style="background: url('https://cdn.houdemingxin.com/image/default/F07EA3DBA53744D4A2B16565EAF2E2B5-6-2.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="TS"></span>
+            <span id="subtitle" data-typed-text="PromiseA+规范"></span>
           
         </div>
 
@@ -212,8 +215,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-06-10 16:22" pubdate>
-          2024年6月10日 下午
+        <time datetime="2024-08-28 15:23" pubdate>
+          2024年8月28日 下午
         </time>
       </span>
     
@@ -224,7 +227,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          90 字
+          1k 字
         
       </span>
     
@@ -235,7 +238,7 @@
         
         
         
-          1 分钟
+          9 分钟
         
       </span>
     
@@ -272,30 +275,110 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">TS</h1>
+            <h1 id="seo-header">PromiseA+规范</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="TS"><a href="#TS" class="headerlink" title="TS"></a>TS</h2><h3 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h3><ul>
-<li>布尔类型(boolean)</li>
-<li>数字类型(number)</li>
-<li>字符串类型(string)</li>
-<li>数组类型(array)</li>
-<li>元组类型(tuple)</li>
-<li>枚举类型(enum)</li>
-<li>任意类型(any)</li>
-<li>空值类型(void)</li>
-<li>对象类型(object)</li>
-<li>联合类型(union)</li>
-<li>类型断言(as)</li>
-<li>类型推断(infer)</li>
-<li>类型别名(type)</li>
-<li>类型兼容性(compatible)</li>
-<li>类型保护(protect)</li>
-<li>类型声明(declare)</li>
-<li>类型注解(annotate)</li>
+                <h2 id="PromiseA-规范"><a href="#PromiseA-规范" class="headerlink" title="PromiseA+规范"></a>PromiseA+规范</h2><h3 id="1-术语"><a href="#1-术语" class="headerlink" title="1. 术语"></a>1. 术语</h3><ul>
+<li>Promise 是一个拥有 <code>then</code> 方法的对象或函数，其行为符合本规范。</li>
+<li>thenable 是定义了 <code>then</code> 方法的对象或函数。</li>
+<li>value 是任何合法的 JavaScript 值（包括 undefined, thenable, 或 promise）。</li>
+<li>exception 是一个使用 throw 语句抛出的值。</li>
+<li>reason 是一个表明 promise 为什么被拒绝的值。</li>
 </ul>
+<h3 id="2-要求"><a href="#2-要求" class="headerlink" title="2. 要求"></a>2. 要求</h3><h4 id="2-1-Promise-状态"><a href="#2-1-Promise-状态" class="headerlink" title="2.1 Promise 状态"></a>2.1 Promise 状态</h4><p>一个 promise 必须处于以下三个状态之一：<code>pending</code>，<code>fulfilled</code>，或 <code>rejected</code>。</p>
+<ul>
+<li><p>当处于 pending 状态时，promise：</p>
+<ul>
+<li>可能会转变为 <code>fulfilled</code> 状态并传递一个值给相应的 <code>onFulfilled</code> 回调函数。</li>
+<li>也可能会转变为 <code>rejected</code> 状态并传递一个值给相应的 <code>onRejected</code> 回调函数。</li>
+</ul>
+</li>
+<li><p>当处于 <code>fulfilled</code> 状态时，promise：</p>
+<ul>
+<li>必须不会转变为其他任何状态。</li>
+<li>必须有一个值，且这个值不能被改变。</li>
+</ul>
+</li>
+<li><p>当处于 <code>rejected</code> 状态时，promise：</p>
+<ul>
+<li>必须不会转变为其他任何状态。</li>
+<li>必须有一个值，且这个值不能被改变。</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-2-then-方法"><a href="#2-2-then-方法" class="headerlink" title="2.2 then 方法"></a>2.2 then 方法</h4><p>一个 promise 必须提供一个 <code>then</code> 方法以访问其当前值、最终值或拒绝原因。</p>
+<p>promise 的 then 方法接收两个参数：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">promise.<span class="hljs-title function_">then</span>(onFulfilled, onRejected);<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><p>onFulfilled 和 onRejected 都是可选参数。</p>
+<ul>
+<li>如果 onFulfilled 不是函数，它必须被忽略。</li>
+<li>如果 onRejected 不是函数，它必须被忽略。</li>
+</ul>
+</li>
+<li><p>如果 onFulfilled 是一个函数：</p>
+<ul>
+<li>它必须在 promise 被 fulfilled 后调用，并且 promise 的值作为它的第一个参数。</li>
+<li>它不能被调用超过一次。</li>
+<li>它必须以函数的形式被调用（即没有 this 值）。</li>
+</ul>
+</li>
+<li><p>如果 onRejected 是一个函数：</p>
+<ul>
+<li>它必须在 promise 被 rejected 后调用，并且 promise 的拒绝原因作为它的第一个参数。</li>
+<li>它不能被调用超过一次。</li>
+<li>它必须以函数的形式被调用（即没有 this 值）。</li>
+</ul>
+</li>
+<li><p>then 方法必须返回一个 promise。</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">promise2 = promise1.<span class="hljs-title function_">then</span>(onFulfilled, onRejected);<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>如果 onFulfilled 或 onRejected 抛出一个异常 e，promise2 必须以 e 为拒绝原因被拒绝。</li>
+<li>如果 onFulfilled 是一个函数且返回一个值 x，运行 [[PromiseResolve]](promise2, x)。</li>
+<li>如果 onRejected 是一个函数且返回一个值 x，运行 [[PromiseResolve]](promise2, x)。</li>
+<li>如果 onFulfilled 不是函数且 promise1 被 fulfilled，promise2 必须以与 promise1 相同的值被 fulfilled。</li>
+<li>如果 onRejected 不是函数且 promise1 被 rejected，promise2 必须以与 promise1 相同的原因被 rejected。</li>
+</ul>
+<h4 id="2-3-Promise-解析过程"><a href="#2-3-Promise-解析过程" class="headerlink" title="2.3 Promise 解析过程"></a>2.3 Promise 解析过程</h4><p>[[PromiseResolve]](promise, x) 的执行过程如下：</p>
+<ul>
+<li>如果 promise 和 x 指向同一个对象，promise 必须以 TypeError 为拒绝原因被拒绝。</li>
+<li>如果 x 是一个 thenable 对象，则尝试以 x 为基础执行，即尝试执行 x.then(resolvePromise, rejectPromise)：<ul>
+<li>如果 resolvePromise 以值 y 为参数被调用，如果 y 不是 thenable，则用 y 作为 promise 的值，否则继续执行 [[PromiseResolve]](promise, y)。</li>
+<li>如果 rejectPromise 以原因 r 为参数被调用，则以 r 为拒绝原因拒绝 promise。</li>
+<li>如果 resolvePromise 和 rejectPromise 都被调用，或者被同一个参数调用多次，则第一次调用优先，后续调用都会被忽略。</li>
+<li>如果调用 then 方法抛出异常 e，则：<ul>
+<li>如果 resolvePromise 或 rejectPromise 已经被调用，则忽略这个异常。</li>
+<li>否则，以 e 为拒绝原因拒绝 promise。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>如果 x 不是 thenable 对象或函数，则用 x 作为 promise 的值，fulfill promise。</li>
+<li>如果在尝试执行 x.then 时抛出异常 e，则：<ul>
+<li>如果 resolvePromise 或 rejectPromise 已经被调用，则忽略这个异常。</li>
+<li>否则，以 e 为拒绝原因拒绝 promise。</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-注意事项"><a href="#3-注意事项" class="headerlink" title="3. 注意事项"></a>3. 注意事项</h3><ul>
+<li>本规范没有定义 promise 的构造函数，也没有定义如何创建一个 promise。本规范假定 promise 的构造函数是 Promise，Promise 的构造函数是 Promise 构造器。</li>
+<li>本规范假定 promise 的 then 方法是 Promise.prototype.then，then 方法是 then 方法。</li>
+<li>本规范假定 promise 的 resolve 方法是 Promise.resolve，resolve 方法是 resolve 方法。</li>
+<li>本规范假定 promise 的 reject 方法是 Promise.reject，reject 方法是 reject 方法。</li>
+<li>本规范假定 promise 的 all 方法是 Promise.all，all 方法是 all 方法。</li>
+<li>本规范假定 promise 的 race 方法是 Promise.race，race 方法是 race 方法。</li>
+<li>本规范假定 promise 的 any 方法是 Promise.any，any 方法是 any 方法。</li>
+<li>本规范假定 promise 的 allSettled 方法是 Promise.allSettled，allSettled 方法是 allSettled 方法。</li>
+<li>本规范假定 promise 的 catch 方法是 Promise.prototype.catch，catch 方法是 catch 方法。</li>
+<li>本规范假定 promise 的 finally 方法是 Promise.prototype.finally，finally 方法是 finally 方法。</li>
+</ul>
+<p>转载：<a target="_blank" rel="noopener" href="https://promisesaplus.com/">https://promisesaplus.com/</a></p>
 
                 
               </div>
@@ -305,6 +388,13 @@
               <div class="post-metas my-3">
   
   
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Promise/" class="print-no-link">#Promise</a>
+      
+    </div>
+  
 </div>
 
 
@@ -313,8 +403,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>TS</div>
-      <div>http://example.com/2024/06/10/TS/</div>
+      <div>PromiseA+规范</div>
+      <div>http://example.com/2024/08/28/PromiseA+规范/</div>
     </div>
     <div class="license-meta">
       
@@ -326,7 +416,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年6月10日</div>
+          <div>2024年8月28日</div>
         </div>
       
       
@@ -358,18 +448,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/06/10/webpack/" title="Webpack">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Webpack</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/06/09/%E6%89%8B%E5%86%99%E9%A2%98/" title="手写题">
-                        <span class="hidden-mobile">手写题</span>
+                      <a href="/2024/08/21/React%20Diff%E7%AE%97%E6%B3%95/" title="React Diff算法">
+                        <span class="hidden-mobile">React Diff算法</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
