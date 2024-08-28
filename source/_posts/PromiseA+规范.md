@@ -47,20 +47,20 @@ promise 的 then 方法接收两个参数：
 promise.then(onFulfilled, onRejected);
 ```
 
-- onFulfilled 和 onRejected 都是可选参数。
+- `onFulfilled` 和 `onRejected` 都是可选参数。
 
-  - 如果 onFulfilled 不是函数，它必须被忽略。
-  - 如果 onRejected 不是函数，它必须被忽略。
+  - 如果 `onFulfilled` 不是函数，它必须被忽略。
+  - 如果 `onRejected` 不是函数，它必须被忽略。
 
-- 如果 onFulfilled 是一个函数：
+- 如果 `onFulfilled` 是一个函数：
 
-  - 它必须在 promise 被 fulfilled 后调用，并且 promise 的值作为它的第一个参数。
+  - 它必须在 promise 被 `fulfilled` 后调用，并且 promise 的值作为它的第一个参数。
   - 它不能被调用超过一次。
   - 它必须以函数的形式被调用（即没有 this 值）。
 
-- 如果 onRejected 是一个函数：
+- 如果 `onRejected` 是一个函数：
 
-  - 它必须在 promise 被 rejected 后调用，并且 promise 的拒绝原因作为它的第一个参数。
+  - 它必须在 promise 被 `rejected` 后调用，并且 promise 的拒绝原因作为它的第一个参数。
   - 它不能被调用超过一次。
   - 它必须以函数的形式被调用（即没有 this 值）。
 
@@ -70,11 +70,11 @@ promise.then(onFulfilled, onRejected);
 promise2 = promise1.then(onFulfilled, onRejected);
 ```
 
-- 如果 onFulfilled 或 onRejected 抛出一个异常 e，promise2 必须以 e 为拒绝原因被拒绝。
-- 如果 onFulfilled 是一个函数且返回一个值 x，运行 [[PromiseResolve]](promise2, x)。
-- 如果 onRejected 是一个函数且返回一个值 x，运行 [[PromiseResolve]](promise2, x)。
-- 如果 onFulfilled 不是函数且 promise1 被 fulfilled，promise2 必须以与 promise1 相同的值被 fulfilled。
-- 如果 onRejected 不是函数且 promise1 被 rejected，promise2 必须以与 promise1 相同的原因被 rejected。
+- 如果 `onFulfilled` 或 `onRejected` 抛出一个异常 e，promise2 必须以 e 为拒绝原因被拒绝。
+- 如果 `onFulfilled` 是一个函数且返回一个值 x，运行 [[PromiseResolve]](promise2, x)。
+- 如果 `onRejected` 是一个函数且返回一个值 x，运行 [[PromiseResolve]](promise2, x)。
+- 如果 `onFulfilled` 不是函数且 promise1 被 fulfilled，promise2 必须以与 promise1 相同的值被 `fulfilled`。
+- 如果 `onRejected` 不是函数且 promise1 被 rejected，promise2 必须以与 promise1 相同的原因被 `rejected`。
 
 #### 2.3 Promise 解析过程
 
