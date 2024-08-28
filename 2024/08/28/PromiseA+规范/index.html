@@ -28,7 +28,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.houdemingxin.com/image/default/F07EA3DBA53744D4A2B16565EAF2E2B5-6-2.png">
 <meta property="article:published_time" content="2024-08-28T15:23:01.000Z">
-<meta property="article:modified_time" content="2024-08-28T09:38:26.495Z">
+<meta property="article:modified_time" content="2024-08-28T09:53:32.293Z">
 <meta property="article:author" content="巷子里的老张先生">
 <meta property="article:tag" content="Promise">
 <meta name="twitter:card" content="summary_large_image">
@@ -313,22 +313,22 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">promise.<span class="hljs-title function_">then</span>(onFulfilled, onRejected);<br></code></pre></td></tr></table></figure>
 
 <ul>
-<li><p>onFulfilled 和 onRejected 都是可选参数。</p>
+<li><p><code>onFulfilled</code> 和 <code>onRejected</code> 都是可选参数。</p>
 <ul>
-<li>如果 onFulfilled 不是函数，它必须被忽略。</li>
-<li>如果 onRejected 不是函数，它必须被忽略。</li>
+<li>如果 <code>onFulfilled</code> 不是函数，它必须被忽略。</li>
+<li>如果 <code>onRejected</code> 不是函数，它必须被忽略。</li>
 </ul>
 </li>
-<li><p>如果 onFulfilled 是一个函数：</p>
+<li><p>如果 <code>onFulfilled</code> 是一个函数：</p>
 <ul>
-<li>它必须在 promise 被 fulfilled 后调用，并且 promise 的值作为它的第一个参数。</li>
+<li>它必须在 promise 被 <code>fulfilled</code> 后调用，并且 promise 的值作为它的第一个参数。</li>
 <li>它不能被调用超过一次。</li>
 <li>它必须以函数的形式被调用（即没有 this 值）。</li>
 </ul>
 </li>
-<li><p>如果 onRejected 是一个函数：</p>
+<li><p>如果 <code>onRejected</code> 是一个函数：</p>
 <ul>
-<li>它必须在 promise 被 rejected 后调用，并且 promise 的拒绝原因作为它的第一个参数。</li>
+<li>它必须在 promise 被 <code>rejected</code> 后调用，并且 promise 的拒绝原因作为它的第一个参数。</li>
 <li>它不能被调用超过一次。</li>
 <li>它必须以函数的形式被调用（即没有 this 值）。</li>
 </ul>
@@ -339,11 +339,11 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">promise2 = promise1.<span class="hljs-title function_">then</span>(onFulfilled, onRejected);<br></code></pre></td></tr></table></figure>
 
 <ul>
-<li>如果 onFulfilled 或 onRejected 抛出一个异常 e，promise2 必须以 e 为拒绝原因被拒绝。</li>
-<li>如果 onFulfilled 是一个函数且返回一个值 x，运行 [[PromiseResolve]](promise2, x)。</li>
-<li>如果 onRejected 是一个函数且返回一个值 x，运行 [[PromiseResolve]](promise2, x)。</li>
-<li>如果 onFulfilled 不是函数且 promise1 被 fulfilled，promise2 必须以与 promise1 相同的值被 fulfilled。</li>
-<li>如果 onRejected 不是函数且 promise1 被 rejected，promise2 必须以与 promise1 相同的原因被 rejected。</li>
+<li>如果 <code>onFulfilled</code> 或 <code>onRejected</code> 抛出一个异常 e，promise2 必须以 e 为拒绝原因被拒绝。</li>
+<li>如果 <code>onFulfilled</code> 是一个函数且返回一个值 x，运行 [[PromiseResolve]](promise2, x)。</li>
+<li>如果 <code>onRejected</code> 是一个函数且返回一个值 x，运行 [[PromiseResolve]](promise2, x)。</li>
+<li>如果 <code>onFulfilled</code> 不是函数且 promise1 被 fulfilled，promise2 必须以与 promise1 相同的值被 <code>fulfilled</code>。</li>
+<li>如果 <code>onRejected</code> 不是函数且 promise1 被 rejected，promise2 必须以与 promise1 相同的原因被 <code>rejected</code>。</li>
 </ul>
 <h4 id="2-3-Promise-解析过程"><a href="#2-3-Promise-解析过程" class="headerlink" title="2.3 Promise 解析过程"></a>2.3 Promise 解析过程</h4><p>[[PromiseResolve]](promise, x) 的执行过程如下：</p>
 <ul>
